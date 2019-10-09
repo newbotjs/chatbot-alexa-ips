@@ -1,0 +1,49 @@
+@Intent('play', [
+    'I want to start playing'
+])
+play() {
+    product = getProduct(PRODUCT_NAME)
+    if (product.entitled == 'NOT_ENTITLED') {
+        buy()
+        return
+    }
+    > Let's go !
+}
+
+@Intent('buy', [
+    'buy pack'
+])
+buy() {
+    @Format('Amazon.Purchase.Buy', PRODUCT_NAME)
+    > Buy
+}
+
+@Intent('cancel', [
+    'I want to cancel my purchase'
+])
+cancel() {
+    @Format('Amazon.Purchase.Cancel', PRODUCT_NAME)
+    > Cancel
+}
+
+@Event('on', 'AMAZON.Buy')
+onBuy () {
+    purchaseResult = :event.purchaseResult
+    if (purchaseResult == 'ALREADY_PURCHASED') {
+        > Already
+    }
+    else if (purchaseResult == 'ACCEPTED') {
+        > Thanks ! 
+    }
+    else if (purchaseResult == 'DECLINED') {
+        > Ok... ! 
+    }
+}
+
+@Event('on', 'AMAZON.Cancel')
+onCancel() {
+    purchaseResult = :event.purchaseResult
+    if (purchaseResult == 'ACCEPTED') {
+        > Canceled ! 
+    }
+}

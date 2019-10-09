@@ -1,0 +1,389 @@
+{
+  "settings": {
+    "languages": [
+      "0",
+      "en"
+    ]
+  },
+  "nluManager": {
+    "settings": {},
+    "languages": [
+      "0",
+      "en"
+    ],
+    "intentDomains": {},
+    "domainManagers": {
+      "0": {
+        "settings": {
+          "language": "0",
+          "useNoneFeature": false,
+          "config": {
+            "activation": "leaky-relu",
+            "hiddenLayers": [],
+            "iterations": 20000,
+            "learningRate": 0.8,
+            "errorThresh": 0.00005,
+            "momentum": 0.5,
+            "deltaErrorThresh": 0.000001,
+            "maxDecimals": 9,
+            "leakyReluAlpha": 0.06,
+            "timeout": 120000
+          }
+        },
+        "language": "0",
+        "nluClassName": "BrainNLU",
+        "useMasterDomain": true,
+        "trainByDomain": false,
+        "keepStopwords": true,
+        "stemDict": {},
+        "intentDict": {},
+        "useStemDict": true,
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "language": "0",
+              "useNoneFeature": false,
+              "config": {
+                "activation": "leaky-relu",
+                "hiddenLayers": [],
+                "iterations": 20000,
+                "learningRate": 0.8,
+                "errorThresh": 0.00005,
+                "momentum": 0.5,
+                "deltaErrorThresh": 0.000001,
+                "maxDecimals": 9,
+                "leakyReluAlpha": 0.06,
+                "timeout": 120000
+              }
+            },
+            "language": "0",
+            "keepStopwords": true,
+            "docs": [],
+            "features": {},
+            "isEditing": false,
+            "className": "BrainNLU",
+            "classifier": {
+              "className": "BrainClassifier",
+              "settings": {
+                "language": "0",
+                "useNoneFeature": false,
+                "config": {
+                  "activation": "leaky-relu",
+                  "hiddenLayers": [],
+                  "iterations": 20000,
+                  "learningRate": 0.8,
+                  "errorThresh": 0.00005,
+                  "momentum": 0.5,
+                  "deltaErrorThresh": 0.000001,
+                  "maxDecimals": 9,
+                  "leakyReluAlpha": 0.06,
+                  "timeout": 120000
+                }
+              },
+              "labels": [],
+              "network": {
+                "layers": [],
+                "trainOpts": {
+                  "iterations": 20000,
+                  "errorThresh": 0.00005,
+                  "deltaErrorThresh": 0.000001,
+                  "learningRate": 0.8,
+                  "momentum": 0.5,
+                  "leakyReluAlpha": 0.06,
+                  "maxDecimals": 9,
+                  "log": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "en": {
+        "settings": {
+          "language": "en",
+          "useNoneFeature": true,
+          "config": {
+            "activation": "leaky-relu",
+            "hiddenLayers": [],
+            "iterations": 20000,
+            "learningRate": 0.8,
+            "errorThresh": 0.00005,
+            "momentum": 0.5,
+            "deltaErrorThresh": 0.000001,
+            "maxDecimals": 9,
+            "leakyReluAlpha": 0.06,
+            "timeout": 120000
+          }
+        },
+        "language": "en",
+        "nluClassName": "BrainNLU",
+        "useMasterDomain": true,
+        "trainByDomain": false,
+        "keepStopwords": true,
+        "stemDict": {
+          "i,play,start,to,want": {
+            "domain": "default",
+            "intent": "play"
+          },
+          "buy,pack": {
+            "domain": "default",
+            "intent": "buy"
+          },
+          "cancel,i,my,purchas,to,want": {
+            "domain": "default",
+            "intent": "cancel"
+          }
+        },
+        "intentDict": {
+          "play": "default",
+          "buy": "default",
+          "cancel": "default"
+        },
+        "useStemDict": true,
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "language": "en",
+              "useNoneFeature": true,
+              "config": {
+                "activation": "leaky-relu",
+                "hiddenLayers": [],
+                "iterations": 20000,
+                "learningRate": 0.8,
+                "errorThresh": 0.00005,
+                "momentum": 0.5,
+                "deltaErrorThresh": 0.000001,
+                "maxDecimals": 9,
+                "leakyReluAlpha": 0.06,
+                "timeout": 120000
+              }
+            },
+            "language": "en",
+            "keepStopwords": true,
+            "docs": [
+              {
+                "intent": "play",
+                "utterance": [
+                  "i",
+                  "want",
+                  "to",
+                  "start",
+                  "play"
+                ],
+                "tokens": [
+                  "i",
+                  "want",
+                  "to",
+                  "start",
+                  "play"
+                ]
+              },
+              {
+                "intent": "buy",
+                "utterance": [
+                  "buy",
+                  "pack"
+                ],
+                "tokens": [
+                  "buy",
+                  "pack"
+                ]
+              },
+              {
+                "intent": "cancel",
+                "utterance": [
+                  "i",
+                  "want",
+                  "to",
+                  "cancel",
+                  "my",
+                  "purchas"
+                ],
+                "tokens": [
+                  "i",
+                  "want",
+                  "to",
+                  "cancel",
+                  "my",
+                  "purchas"
+                ]
+              }
+            ],
+            "features": {
+              "i": 2,
+              "want": 2,
+              "to": 2,
+              "start": 1,
+              "play": 1,
+              "buy": 1,
+              "pack": 1,
+              "cancel": 1,
+              "my": 1,
+              "purchas": 1
+            },
+            "isEditing": false,
+            "className": "BrainNLU",
+            "classifier": {
+              "className": "BrainClassifier",
+              "settings": {
+                "language": "en",
+                "useNoneFeature": true,
+                "config": {
+                  "activation": "leaky-relu",
+                  "hiddenLayers": [],
+                  "iterations": 20000,
+                  "learningRate": 0.8,
+                  "errorThresh": 0.00005,
+                  "momentum": 0.5,
+                  "deltaErrorThresh": 0.000001,
+                  "maxDecimals": 9,
+                  "leakyReluAlpha": 0.06,
+                  "timeout": 120000
+                }
+              },
+              "labels": [],
+              "network": {
+                "sizes": [
+                  11,
+                  4
+                ],
+                "layers": [
+                  {
+                    "i": {},
+                    "want": {},
+                    "to": {},
+                    "start": {},
+                    "play": {},
+                    "buy": {},
+                    "pack": {},
+                    "cancel": {},
+                    "my": {},
+                    "purchas": {},
+                    "nonefeature": {}
+                  },
+                  {
+                    "play": {
+                      "bias": 0.335543106,
+                      "weights": {
+                        "i": 2.296454906,
+                        "want": 2.296454906,
+                        "to": 2.296454906,
+                        "start": 4.720196247,
+                        "play": 4.720196247,
+                        "buy": -0.33619526,
+                        "pack": -0.33619526,
+                        "cancel": -2.42373848,
+                        "my": -2.42373848,
+                        "purchas": -2.42373848,
+                        "nonefeature": -0.322084367
+                      }
+                    },
+                    "buy": {
+                      "bias": 1.245556546,
+                      "weights": {
+                        "i": -0.535025835,
+                        "want": -0.535025835,
+                        "to": -0.535025835,
+                        "start": -0.281226993,
+                        "play": -0.281226993,
+                        "buy": 7.700291634,
+                        "pack": 7.700291634,
+                        "cancel": -0.253798842,
+                        "my": -0.253798842,
+                        "purchas": -0.253798842,
+                        "nonefeature": -1.167429805
+                      }
+                    },
+                    "cancel": {
+                      "bias": 0.226570338,
+                      "weights": {
+                        "i": 1.529676914,
+                        "want": 1.529676914,
+                        "to": 1.529676914,
+                        "start": -2.420497656,
+                        "play": -2.420497656,
+                        "buy": -0.195498869,
+                        "pack": -0.195498869,
+                        "cancel": 3.950175762,
+                        "my": 3.950175762,
+                        "purchas": 3.950175762,
+                        "nonefeature": -0.220159009
+                      }
+                    },
+                    "None": {
+                      "bias": 9.660029314,
+                      "weights": {
+                        "i": -2.29443121,
+                        "want": -2.29443121,
+                        "to": -2.29443121,
+                        "start": -1.377797127,
+                        "play": -1.377797127,
+                        "buy": -4.77927494,
+                        "pack": -4.77927494,
+                        "cancel": -0.916632771,
+                        "my": -0.916632771,
+                        "purchas": -0.916632771,
+                        "nonefeature": 6.593600273
+                      }
+                    }
+                  }
+                ],
+                "trainOpts": {
+                  "iterations": 20000,
+                  "errorThresh": 0.00005,
+                  "deltaErrorThresh": 0.000001,
+                  "learningRate": 0.8,
+                  "momentum": 0.5,
+                  "leakyReluAlpha": 0.06,
+                  "maxDecimals": 9,
+                  "log": false
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "extraSentences": [
+      [
+        "en",
+        "I want to start playing"
+      ],
+      [
+        "en",
+        "buy pack"
+      ],
+      [
+        "en",
+        "I want to cancel my purchase"
+      ]
+    ]
+  },
+  "nerManager": {
+    "settings": {},
+    "threshold": 0.8,
+    "builtins": [
+      "Number",
+      "Ordinal",
+      "Percentage",
+      "Age",
+      "Currency",
+      "Dimension",
+      "Temperature",
+      "DateTime",
+      "PhoneNumber",
+      "IpAddress",
+      "Boolean",
+      "Email",
+      "Hashtag",
+      "URL"
+    ],
+    "namedEntities": {}
+  },
+  "slotManager": {},
+  "responses": {},
+  "actions": {},
+  "utteranceDict": {
+    "?": "help"
+  }
+}
